@@ -163,19 +163,19 @@ public class GBDeviceAdapterv2 extends RecyclerView.Adapter<GBDeviceAdapterv2.Vi
         }
 
         //device specific settings
-        holder.deviceSpecificSettingsView.setVisibility(coordinator.getSupportedDeviceSpecificSettings(device) != null ? View.VISIBLE : View.GONE);
-        holder.deviceSpecificSettingsView.setOnClickListener(new View.OnClickListener()
-
-                                                {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        Intent startIntent;
-                                                        startIntent = new Intent(context, DeviceSettingsActivity.class);
-                                                        startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
-                                                        context.startActivity(startIntent);
-                                                    }
-                                                }
-        );
+//        holder.deviceSpecificSettingsView.setVisibility(coordinator.getSupportedDeviceSpecificSettings(device) != null ? View.VISIBLE : View.GONE);
+//        holder.deviceSpecificSettingsView.setOnClickListener(new View.OnClickListener()
+//
+//                                                {
+//                                                    @Override
+//                                                    public void onClick(View v) {
+//                                                        Intent startIntent;
+//                                                        startIntent = new Intent(context, DeviceSettingsActivity.class);
+//                                                        startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
+//                                                        context.startActivity(startIntent);
+//                                                    }
+//                                                }
+//        );
 
         //fetch activity data
         holder.fetchActivityDataBox.setVisibility((device.isInitialized() && coordinator.supportsActivityDataFetching()) ? View.VISIBLE : View.GONE);
@@ -192,50 +192,50 @@ public class GBDeviceAdapterv2 extends RecyclerView.Adapter<GBDeviceAdapterv2.Vi
 
 
         //take screenshot
-        holder.takeScreenshotView.setVisibility((device.isInitialized() && coordinator.supportsScreenshots()) ? View.VISIBLE : View.GONE);
-        holder.takeScreenshotView.setOnClickListener(new View.OnClickListener()
-
-                                                     {
-                                                         @Override
-                                                         public void onClick(View v) {
-                                                             showTransientSnackbar(R.string.controlcenter_snackbar_requested_screenshot);
-                                                             GBApplication.deviceService().onScreenshotReq();
-                                                         }
-                                                     }
-        );
+//        holder.takeScreenshotView.setVisibility((device.isInitialized() && coordinator.supportsScreenshots()) ? View.VISIBLE : View.GONE);
+//        holder.takeScreenshotView.setOnClickListener(new View.OnClickListener()
+//
+//                                                     {
+//                                                         @Override
+//                                                         public void onClick(View v) {
+//                                                             showTransientSnackbar(R.string.controlcenter_snackbar_requested_screenshot);
+//                                                             GBApplication.deviceService().onScreenshotReq();
+//                                                         }
+//                                                     }
+//        );
 
         //manage apps
-        holder.manageAppsView.setVisibility((device.isInitialized() && coordinator.supportsAppsManagement()) ? View.VISIBLE : View.GONE);
-        holder.manageAppsView.setOnClickListener(new View.OnClickListener()
-
-                                                 {
-                                                     @Override
-                                                     public void onClick(View v) {
-                                                         DeviceCoordinator coordinator = DeviceHelper.getInstance().getCoordinator(device);
-                                                         Class<? extends Activity> appsManagementActivity = coordinator.getAppsManagementActivity();
-                                                         if (appsManagementActivity != null) {
-                                                             Intent startIntent = new Intent(context, appsManagementActivity);
-                                                             startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
-                                                             context.startActivity(startIntent);
-                                                         }
-                                                     }
-                                                 }
-        );
+//        holder.manageAppsView.setVisibility((device.isInitialized() && coordinator.supportsAppsManagement()) ? View.VISIBLE : View.GONE);
+//        holder.manageAppsView.setOnClickListener(new View.OnClickListener()
+//
+//                                                 {
+//                                                     @Override
+//                                                     public void onClick(View v) {
+//                                                         DeviceCoordinator coordinator = DeviceHelper.getInstance().getCoordinator(device);
+//                                                         Class<? extends Activity> appsManagementActivity = coordinator.getAppsManagementActivity();
+//                                                         if (appsManagementActivity != null) {
+//                                                             Intent startIntent = new Intent(context, appsManagementActivity);
+//                                                             startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
+//                                                             context.startActivity(startIntent);
+//                                                         }
+//                                                     }
+//                                                 }
+//        );
 
         //set alarms
-        holder.setAlarmsView.setVisibility(coordinator.getAlarmSlotCount() > 0 ? View.VISIBLE : View.GONE);
-        holder.setAlarmsView.setOnClickListener(new View.OnClickListener()
-
-                                                {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        Intent startIntent;
-                                                        startIntent = new Intent(context, ConfigureAlarms.class);
-                                                        startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
-                                                        context.startActivity(startIntent);
-                                                    }
-                                                }
-        );
+//        holder.setAlarmsView.setVisibility(coordinator.getAlarmSlotCount() > 0 ? View.VISIBLE : View.GONE);
+//        holder.setAlarmsView.setOnClickListener(new View.OnClickListener()
+//
+//                                                {
+//                                                    @Override
+//                                                    public void onClick(View v) {
+//                                                        Intent startIntent;
+//                                                        startIntent = new Intent(context, ConfigureAlarms.class);
+//                                                        startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
+//                                                        context.startActivity(startIntent);
+//                                                    }
+//                                                }
+//        );
 
         //show graphs
         holder.showActivityGraphs.setVisibility(coordinator.supportsActivityTracking() ? View.VISIBLE : View.GONE);
@@ -261,18 +261,18 @@ public class GBDeviceAdapterv2 extends RecyclerView.Adapter<GBDeviceAdapterv2.Vi
 //        });
 
         //show activity tracks
-        holder.showActivityTracks.setVisibility(coordinator.supportsActivityTracks() ? View.VISIBLE : View.GONE);
-        holder.showActivityTracks.setOnClickListener(new View.OnClickListener()
-                                                     {
-                                                         @Override
-                                                         public void onClick(View v) {
-                                                             Intent startIntent;
-                                                             startIntent = new Intent(context, ActivitySummariesActivity.class);
-                                                             startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
-                                                             context.startActivity(startIntent);
-                                                         }
-                                                     }
-        );
+//        holder.showActivityTracks.setVisibility(coordinator.supportsActivityTracks() ? View.VISIBLE : View.GONE);
+//        holder.showActivityTracks.setOnClickListener(new View.OnClickListener()
+//                                                     {
+//                                                         @Override
+//                                                         public void onClick(View v) {
+//                                                             Intent startIntent;
+//                                                             startIntent = new Intent(context, ActivitySummariesActivity.class);
+//                                                             startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
+//                                                             context.startActivity(startIntent);
+//                                                         }
+//                                                     }
+//        );
 
         ItemWithDetailsAdapter infoAdapter = new ItemWithDetailsAdapter(context, device.getDeviceInfos());
         infoAdapter.setHorizontalAlignment(true);
@@ -296,159 +296,159 @@ public class GBDeviceAdapterv2 extends RecyclerView.Adapter<GBDeviceAdapterv2.Vi
 
         );
 
-        holder.findDevice.setVisibility(device.isInitialized() && coordinator.supportsFindDevice() ? View.VISIBLE : View.GONE);
-        holder.findDevice.setOnClickListener(new View.OnClickListener()
+//        holder.findDevice.setVisibility(device.isInitialized() && coordinator.supportsFindDevice() ? View.VISIBLE : View.GONE);
+//        holder.findDevice.setOnClickListener(new View.OnClickListener()
+//
+//                                             {
+//                                                 @Override
+//                                                 public void onClick(View v) {
+//                                                     if (device.getType() == DeviceType.VIBRATISSIMO) {
+//                                                         Intent startIntent;
+//                                                         startIntent = new Intent(context, VibrationActivity.class);
+//                                                         startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
+//                                                         context.startActivity(startIntent);
+//                                                         return;
+//                                                     }
+//                                                     GBApplication.deviceService().onFindDevice(true);
+//                                                     Snackbar.make(parent, R.string.control_center_find_lost_device, Snackbar.LENGTH_INDEFINITE).setAction(R.string.find_lost_device_you_found_it, new View.OnClickListener() {
+//                                                         @Override
+//                                                         public void onClick(View v) {
+//                                                             GBApplication.deviceService().onFindDevice(false);
+//                                                         }
+//                                                     }).setCallback(new Snackbar.Callback() {
+//                                                         @Override
+//                                                         public void onDismissed(Snackbar snackbar, int event) {
+//                                                             GBApplication.deviceService().onFindDevice(false);
+//                                                             super.onDismissed(snackbar, event);
+//                                                         }
+//                                                     }).show();
+////                                                     ProgressDialog.show(
+////                                                             context,
+////                                                             context.getString(R.string.control_center_find_lost_device),
+////                                                             context.getString(R.string.control_center_cancel_to_stop_vibration),
+////                                                             true, true,
+////                                                             new DialogInterface.OnCancelListener() {
+////                                                                 @Override
+////                                                                 public void onCancel(DialogInterface dialog) {
+////                                                                     GBApplication.deviceService().onFindDevice(false);
+////                                                                 }
+////                                                             });
+//                                                 }
+//                                             }
+//
+//        );
 
-                                             {
-                                                 @Override
-                                                 public void onClick(View v) {
-                                                     if (device.getType() == DeviceType.VIBRATISSIMO) {
-                                                         Intent startIntent;
-                                                         startIntent = new Intent(context, VibrationActivity.class);
-                                                         startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
-                                                         context.startActivity(startIntent);
-                                                         return;
-                                                     }
-                                                     GBApplication.deviceService().onFindDevice(true);
-                                                     Snackbar.make(parent, R.string.control_center_find_lost_device, Snackbar.LENGTH_INDEFINITE).setAction(R.string.find_lost_device_you_found_it, new View.OnClickListener() {
-                                                         @Override
-                                                         public void onClick(View v) {
-                                                             GBApplication.deviceService().onFindDevice(false);
-                                                         }
-                                                     }).setCallback(new Snackbar.Callback() {
-                                                         @Override
-                                                         public void onDismissed(Snackbar snackbar, int event) {
-                                                             GBApplication.deviceService().onFindDevice(false);
-                                                             super.onDismissed(snackbar, event);
-                                                         }
-                                                     }).show();
-//                                                     ProgressDialog.show(
-//                                                             context,
-//                                                             context.getString(R.string.control_center_find_lost_device),
-//                                                             context.getString(R.string.control_center_cancel_to_stop_vibration),
-//                                                             true, true,
-//                                                             new DialogInterface.OnCancelListener() {
-//                                                                 @Override
-//                                                                 public void onCancel(DialogInterface dialog) {
-//                                                                     GBApplication.deviceService().onFindDevice(false);
-//                                                                 }
-//                                                             });
-                                                 }
-                                             }
+//        holder.calibrateDevice.setVisibility(device.isInitialized() && (coordinator.getCalibrationActivity() != null) ? View.VISIBLE : View.GONE);
+//        holder.calibrateDevice.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent startIntent = new Intent(context, coordinator.getCalibrationActivity());
+//                startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
+//                context.startActivity(startIntent);
+//            }
+//        });
 
-        );
+//        holder.fmFrequencyBox.setVisibility(View.GONE);
+//        if (device.isInitialized() && device.getExtraInfo("fm_frequency") != null) {
+//            holder.fmFrequencyBox.setVisibility(View.VISIBLE);
+//            holder.fmFrequencyLabel.setText(String.format(Locale.getDefault(), "%.1f", (float) device.getExtraInfo("fm_frequency")));
+//        }
+//        final TextView fmFrequencyLabel = holder.fmFrequencyLabel;
+//        holder.fmFrequencyBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//                builder.setTitle(R.string.preferences_fm_frequency);
+//
+//                final EditText input = new EditText(context);
+//
+//                input.setSelection(input.getText().length());
+//                input.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+//                input.setText(String.format(Locale.getDefault(), "%.1f", (float) device.getExtraInfo("fm_frequency")));
+//                builder.setView(input);
+//
+//                builder.setPositiveButton(context.getResources().getString(android.R.string.ok),
+//                        new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                float frequency = Float.parseFloat(input.getText().toString());
+//                                // Trim to 1 decimal place, discard the rest
+//                                frequency = Float.parseFloat(String.format(Locale.getDefault(), "%.1f", frequency));
+//                                if (frequency < 87.5 || frequency > 108.0) {
+//                                    new AlertDialog.Builder(context)
+//                                            .setTitle(R.string.pref_invalid_frequency_title)
+//                                            .setMessage(R.string.pref_invalid_frequency_message)
+//                                            .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+//                                                public void onClick(DialogInterface dialog, int which) {
+//                                                }
+//                                            })
+//                                            .show();
+//                                } else {
+//                                    device.setExtraInfo("fm_frequency", frequency);
+//                                    fmFrequencyLabel.setText(String.format(Locale.getDefault(), "%.1f", (float) device.getExtraInfo("fm_frequency")));
+//                                    GBApplication.deviceService().onSetFmFrequency(frequency);
+//                                }
+//                            }
+//                        });
+//                builder.setNegativeButton(context.getResources().getString(R.string.Cancel), new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                });
+//
+//                builder.show();
+//            }
+//        });
 
-        holder.calibrateDevice.setVisibility(device.isInitialized() && (coordinator.getCalibrationActivity() != null) ? View.VISIBLE : View.GONE);
-        holder.calibrateDevice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(context, coordinator.getCalibrationActivity());
-                startIntent.putExtra(GBDevice.EXTRA_DEVICE, device);
-                context.startActivity(startIntent);
-            }
-        });
-
-        holder.fmFrequencyBox.setVisibility(View.GONE);
-        if (device.isInitialized() && device.getExtraInfo("fm_frequency") != null) {
-            holder.fmFrequencyBox.setVisibility(View.VISIBLE);
-            holder.fmFrequencyLabel.setText(String.format(Locale.getDefault(), "%.1f", (float) device.getExtraInfo("fm_frequency")));
-        }
-        final TextView fmFrequencyLabel = holder.fmFrequencyLabel;
-        holder.fmFrequencyBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle(R.string.preferences_fm_frequency);
-
-                final EditText input = new EditText(context);
-
-                input.setSelection(input.getText().length());
-                input.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-                input.setText(String.format(Locale.getDefault(), "%.1f", (float) device.getExtraInfo("fm_frequency")));
-                builder.setView(input);
-
-                builder.setPositiveButton(context.getResources().getString(android.R.string.ok),
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                float frequency = Float.parseFloat(input.getText().toString());
-                                // Trim to 1 decimal place, discard the rest
-                                frequency = Float.parseFloat(String.format(Locale.getDefault(), "%.1f", frequency));
-                                if (frequency < 87.5 || frequency > 108.0) {
-                                    new AlertDialog.Builder(context)
-                                            .setTitle(R.string.pref_invalid_frequency_title)
-                                            .setMessage(R.string.pref_invalid_frequency_message)
-                                            .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                }
-                                            })
-                                            .show();
-                                } else {
-                                    device.setExtraInfo("fm_frequency", frequency);
-                                    fmFrequencyLabel.setText(String.format(Locale.getDefault(), "%.1f", (float) device.getExtraInfo("fm_frequency")));
-                                    GBApplication.deviceService().onSetFmFrequency(frequency);
-                                }
-                            }
-                        });
-                builder.setNegativeButton(context.getResources().getString(R.string.Cancel), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.show();
-            }
-        });
-
-        holder.ledColor.setVisibility(View.GONE);
-        if (device.isInitialized() && device.getExtraInfo("led_color") != null && coordinator.supportsLedColor()) {
-            holder.ledColor.setVisibility(View.VISIBLE);
-            final GradientDrawable ledColor = (GradientDrawable) holder.ledColor.getDrawable().mutate();
-            ledColor.setColor((int) device.getExtraInfo("led_color"));
-            holder.ledColor.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ColorPickerDialog.Builder builder = ColorPickerDialog.newBuilder();
-                    builder.setDialogTitle(R.string.preferences_led_color);
-
-                    int[] presets = coordinator.getColorPresets();
-
-                    builder.setColor((int) device.getExtraInfo("led_color"));
-                    builder.setShowAlphaSlider(false);
-                    builder.setShowColorShades(false);
-                    if (coordinator.supportsRgbLedColor()) {
-                        builder.setAllowCustom(true);
-                        if (presets.length == 0) {
-                            builder.setDialogType(ColorPickerDialog.TYPE_CUSTOM);
-                        }
-                    } else {
-                        builder.setAllowCustom(false);
-                    }
-
-                    if (presets.length > 0) {
-                        builder.setAllowPresets(true);
-                        builder.setPresets(presets);
-                    }
-
-                    ColorPickerDialog dialog = builder.create();
-                    dialog.setColorPickerDialogListener(new ColorPickerDialogListener() {
-                        @Override
-                        public void onColorSelected(int dialogId, int color) {
-                            ledColor.setColor(color);
-                            device.setExtraInfo("led_color", color);
-                            GBApplication.deviceService().onSetLedColor(color);
-                        }
-
-                        @Override
-                        public void onDialogDismissed(int dialogId) {
-                            // Nothing to do
-                        }
-                    });
-                    dialog.show(((Activity) context).getFragmentManager(), "color-picker-dialog");
-                }
-            });
-        }
+//        holder.ledColor.setVisibility(View.GONE);
+//        if (device.isInitialized() && device.getExtraInfo("led_color") != null && coordinator.supportsLedColor()) {
+//            holder.ledColor.setVisibility(View.VISIBLE);
+//            final GradientDrawable ledColor = (GradientDrawable) holder.ledColor.getDrawable().mutate();
+//            ledColor.setColor((int) device.getExtraInfo("led_color"));
+//            holder.ledColor.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    ColorPickerDialog.Builder builder = ColorPickerDialog.newBuilder();
+//                    builder.setDialogTitle(R.string.preferences_led_color);
+//
+//                    int[] presets = coordinator.getColorPresets();
+//
+//                    builder.setColor((int) device.getExtraInfo("led_color"));
+//                    builder.setShowAlphaSlider(false);
+//                    builder.setShowColorShades(false);
+//                    if (coordinator.supportsRgbLedColor()) {
+//                        builder.setAllowCustom(true);
+//                        if (presets.length == 0) {
+//                            builder.setDialogType(ColorPickerDialog.TYPE_CUSTOM);
+//                        }
+//                    } else {
+//                        builder.setAllowCustom(false);
+//                    }
+//
+//                    if (presets.length > 0) {
+//                        builder.setAllowPresets(true);
+//                        builder.setPresets(presets);
+//                    }
+//
+//                    ColorPickerDialog dialog = builder.create();
+//                    dialog.setColorPickerDialogListener(new ColorPickerDialogListener() {
+//                        @Override
+//                        public void onColorSelected(int dialogId, int color) {
+//                            ledColor.setColor(color);
+//                            device.setExtraInfo("led_color", color);
+//                            GBApplication.deviceService().onSetLedColor(color);
+//                        }
+//
+//                        @Override
+//                        public void onDialogDismissed(int dialogId) {
+//                            // Nothing to do
+//                        }
+//                    });
+//                    dialog.show(((Activity) context).getFragmentManager(), "color-picker-dialog");
+//                }
+//            });
+//        }
 
         //remove device, hidden under details
         holder.removeDevice.setOnClickListener(new View.OnClickListener()
@@ -553,28 +553,28 @@ public class GBDeviceAdapterv2 extends RecyclerView.Adapter<GBDeviceAdapterv2.Vi
         LinearLayout batteryStatusBox;
         TextView batteryStatusLabel;
         ImageView batteryIcon;
-        ImageView deviceSpecificSettingsView;
+//        ImageView deviceSpecificSettingsView;
         LinearLayout fetchActivityDataBox;
         ImageView fetchActivityData;
         ProgressBar busyIndicator;
-        ImageView takeScreenshotView;
-        ImageView manageAppsView;
-        ImageView setAlarmsView;
+//        ImageView takeScreenshotView;
+//        ImageView manageAppsView;
+//        ImageView setAlarmsView;
         ImageView showActivityGraphs;
-        ImageView showActivityTracks;
-        ImageView calibrateDevice;
+//        ImageView showActivityTracks;
+//        ImageView calibrateDevice;
 
 
         ImageView deviceInfoView;
         //overflow
         final RelativeLayout deviceInfoBox;
         ListView deviceInfoList;
-        ImageView findDevice;
+//        ImageView findDevice;
         ImageView removeDevice;
         ImageView setAlias;
-        LinearLayout fmFrequencyBox;
+//        LinearLayout fmFrequencyBox;
         TextView fmFrequencyLabel;
-        ImageView ledColor;
+//        ImageView ledColor;
 
         ViewHolder(View view) {
             super(view);

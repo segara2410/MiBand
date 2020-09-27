@@ -51,7 +51,7 @@
                     android:clickable="true"
                     android:contentDescription="@string/controlcenter_set_alias"
                     android:focusable="true"
-                    android:tint="?attr/textColorTertiary"
+
                     card_view:srcCompat="@drawable/ic_create" />
 
                 <ImageView
@@ -65,7 +65,7 @@
                     android:clickable="true"
                     android:contentDescription="@string/controlcenter_delete_device"
                     android:focusable="true"
-                    android:tint="?attr/textColorTertiary"
+
                     card_view:srcCompat="@drawable/ic_delete" />
             </RelativeLayout>
 
@@ -120,7 +120,7 @@
                 android:layout_marginTop="8dp"
                 android:clickable="true"
                 android:contentDescription="@string/candidate_item_device_image"
-                android:tint="@color/secondarytext"
+
                 android:background="?android:attr/selectableItemBackground"
                 card_view:srcCompat="@drawable/ic_more_vert"
                 android:focusable="true" />
@@ -140,7 +140,7 @@
                     android:layout_height="40dp"
                     android:padding="4dp"
                     android:scaleType="fitXY"
-                    android:tint="@color/secondarytext"
+
                     card_view:srcCompat="@drawable/level_list_battery" />
 
                 <TextView
@@ -170,7 +170,7 @@
                 android:focusable="true"
                 android:padding="4dp"
                 android:scaleType="fitXY"
-                android:tint="@color/secondarytext"
+
                 card_view:srcCompat="@drawable/ic_activity_graphs" />
 
 <!--            <LinearLayout-->
@@ -299,7 +299,7 @@
                     android:clickable="true"
                     android:contentDescription="@string/controlcenter_fetch_activity_data"
                     android:scaleType="fitXY"
-                    android:tint="@color/secondarytext"
+
                     card_view:srcCompat="@drawable/ic_refresh"
                     android:focusable="true" />
 

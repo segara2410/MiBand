@@ -401,17 +401,17 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
+//                case 0:
+//                    return getString(R.string.activity_sleepchart_activity_and_sleep);
+//                case 1:
+//                    return getString(R.string.sleepchart_your_sleep);
+//                case 2:
+//                    return getSleepTitle();
+//                case 3:
+//                    return getStepsTitle();
+//                case 4:
+//                    return getString(R.string.stats_title);
                 case 0:
-                    return getString(R.string.activity_sleepchart_activity_and_sleep);
-                case 1:
-                    return getString(R.string.sleepchart_your_sleep);
-                case 2:
-                    return getSleepTitle();
-                case 3:
-                    return getStepsTitle();
-                case 4:
-                    return getString(R.string.stats_title);
-                case 5:
                     return getString(R.string.liveactivity_live_activity);
             }
             return super.getPageTitle(position);
