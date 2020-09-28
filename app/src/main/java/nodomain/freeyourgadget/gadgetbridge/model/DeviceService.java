@@ -48,18 +48,23 @@ public interface DeviceService extends EventHandler {
     String ACTION_APP_REORDER = PREFIX + ".action.app_reorder";
     String ACTION_INSTALL = PREFIX + ".action.install";
     String ACTION_RESET = PREFIX + ".action.reset";
-    String ACTION_HEARTRATE_TEST = PREFIX + ".action.heartrate_test";
     String ACTION_FETCH_RECORDED_DATA = PREFIX + ".action.fetch_activity_data";
     String ACTION_DISCONNECT = PREFIX + ".action.disconnect";
     String ACTION_FIND_DEVICE = PREFIX + ".action.find_device";
     String ACTION_SET_CONSTANT_VIBRATION = PREFIX + ".action.set_constant_vibration";
     String ACTION_SET_ALARMS = PREFIX + ".action.set_alarms";
     String ACTION_SAVE_ALARMS = PREFIX + ".action.save_alarms";
-    String ACTION_ENABLE_REALTIME_STEPS = PREFIX + ".action.enable_realtime_steps";
+
     String ACTION_REALTIME_SAMPLES = PREFIX + ".action.realtime_samples";
-    String ACTION_ENABLE_REALTIME_HEARTRATE_MEASUREMENT = PREFIX + ".action.realtime_hr_measurement";
+
     String ACTION_ENABLE_HEARTRATE_SLEEP_SUPPORT = PREFIX + ".action.enable_heartrate_sleep_support";
-    String ACTION_SET_HEARTRATE_MEASUREMENT_INTERVAL = PREFIX + ".action.set_heartrate_measurement_intervarl";
+
+    String ACTION_ENABLE_REALTIME_STEPS = PREFIX + ".action.enable_realtime_steps";
+
+    String ACTION_HEARTRATE_TEST = PREFIX + ".action.heartrate_test";
+    String ACTION_ENABLE_REALTIME_HEARTRATE_MEASUREMENT = PREFIX + ".action.realtime_heartrate_measurement";
+    String ACTION_SET_HEARTRATE_MEASUREMENT_INTERVAL = PREFIX + ".action.set_heartrate_measurement_interval";
+
     String ACTION_ADD_CALENDAREVENT = PREFIX + ".action.add_calendarevent";
     String ACTION_DELETE_CALENDAREVENT = PREFIX + ".action.delete_calendarevent";
     String ACTION_SEND_CONFIGURATION = PREFIX + ".action.send_configuration";

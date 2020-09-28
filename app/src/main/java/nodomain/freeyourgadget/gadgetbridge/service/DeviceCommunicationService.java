@@ -571,6 +571,7 @@ public class DeviceCommunicationService extends Service implements SharedPrefere
                 mDeviceSupport.onEnableHeartRateSleepSupport(enable);
                 break;
             }
+
             case ACTION_SET_HEARTRATE_MEASUREMENT_INTERVAL: {
                 int seconds = intent.getIntExtra(EXTRA_INTERVAL_SECONDS, 0);
                 mDeviceSupport.onSetHeartRateMeasurementInterval(seconds);
@@ -581,6 +582,7 @@ public class DeviceCommunicationService extends Service implements SharedPrefere
                 mDeviceSupport.onEnableRealtimeHeartRateMeasurement(enable);
                 break;
             }
+
             case ACTION_SEND_CONFIGURATION: {
                 String config = intent.getStringExtra(EXTRA_CONFIG);
                 mDeviceSupport.onSendConfiguration(config);

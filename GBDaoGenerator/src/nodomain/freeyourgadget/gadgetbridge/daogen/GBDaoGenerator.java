@@ -85,7 +85,7 @@ public class GBDaoGenerator {
 
         addActivitySummary(schema, user, device);
 
-        new DaoGenerator().generateAll(schema, "app/src/main/java");
+        new DaoGenerator().generateAll(schema, "C:\\xampp\\htdocs\\MiBand-ft-Polar\\app\\src\\main\\java");
     }
 
     private static Entity addTag(Schema schema) {

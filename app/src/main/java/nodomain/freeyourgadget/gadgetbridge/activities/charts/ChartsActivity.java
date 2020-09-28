@@ -352,17 +352,17 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             switch (position) {
-//                case 0:
-//                    return new ActivitySleepChartFragment();
-//                case 1:
-//                    return new SleepChartFragment();
-//                case 2:
-//                    return new WeekSleepChartFragment();
-//                case 3:
-//                    return new WeekStepsChartFragment();
-//                case 4:
-//                    return new SpeedZonesFragment();
                 case 0:
+                    return new ActivitySleepChartFragment();
+                case 1:
+                    return new SleepChartFragment();
+                case 2:
+                    return new WeekSleepChartFragment();
+                case 3:
+                    return new WeekStepsChartFragment();
+                case 4:
+                    return new SpeedZonesFragment();
+                case 5:
                     return new LiveActivityFragment();
 //                case 1:
 //                    return new HeartRateFragment();
@@ -401,17 +401,17 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
-//                case 0:
-//                    return getString(R.string.activity_sleepchart_activity_and_sleep);
-//                case 1:
-//                    return getString(R.string.sleepchart_your_sleep);
-//                case 2:
-//                    return getSleepTitle();
-//                case 3:
-//                    return getStepsTitle();
-//                case 4:
-//                    return getString(R.string.stats_title);
                 case 0:
+                    return getString(R.string.activity_sleepchart_activity_and_sleep);
+                case 1:
+                    return getString(R.string.sleepchart_your_sleep);
+                case 2:
+                    return getSleepTitle();
+                case 3:
+                    return getStepsTitle();
+                case 4:
+                    return getString(R.string.stats_title);
+                case 5:
                     return getString(R.string.liveactivity_live_activity);
             }
             return super.getPageTitle(position);
