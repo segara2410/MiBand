@@ -136,7 +136,7 @@
 * S Dantas <dantasosteney@gmail.com>
 * Sami Alaoui <4ndroidgeek@gmail.com>
 * Roman Plevka <rplevka@redhat.com>
-* rober <rober@prtl.nodomain.net>
+* rober <rober@prtl.custom.net>
 * redking <redking974@gmail.com>
 * Quallenauge <Hamsi2k@freenet.de>
 * Pavel Motyrev <legioner.r@gmail.com>

@@ -13,7 +13,7 @@
 -keepclassmembers class * {
     @android.webkit.JavascriptInterface <methods>;
 }
--keepclassmembers class nodomain.freeyourgadget.gadgetbridge.service.devices.pebble.webview.JSInterface {
+-keepclassmembers class custom.freeyourgadget.MiBandApp.service.devices.pebble.webview.JSInterface {
     public *;
 }
 -keepattributes JavascriptInterface

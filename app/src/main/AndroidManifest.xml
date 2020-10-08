@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="nodomain.freeyourgadget.gadgetbridge">
+    package="custom.freeyourgadget.MiBandApp">
     <!--
         Comment in for testing Pebble Emulator
         <uses-permission android:name="android.permission.INTERNET" />
@@ -57,16 +57,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/GadgetbridgeTheme">
-        <activity android:name=".activities.discover.PolarDiscoveryActivity"></activity>
-        <activity android:name=".activities.SplashScreenActivity"></activity>
-        <activity android:name=".activities.custom_charts.StepsActivity" />
-        <activity android:name=".activities.custom_charts.HeartRateActivity" />
-        <activity android:name=".activities.polar.PolarActivity" />
-        <activity android:name=".devices.qhybrid.WidgetSettingsActivity" />
-        <activity
-            android:name=".activities.ControlCenterv2"
-            android:label="@string/title_activity_controlcenter"
-            android:theme="@style/SplashTheme">
+        <activity android:name=".activities.ActivityChoice"></activity>
+        <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
 
@@ -75,6 +67,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.custom_charts.StepsActivity" />
+        <activity android:name=".activities.custom_charts.HeartRateActivity" />
+        <activity android:name=".activities.polar.PolarActivity" />
+        <activity android:name=".devices.qhybrid.WidgetSettingsActivity" />
+        <activity
+            android:name=".activities.ControlCenterv2"
+            android:label="@string/title_activity_controlcenter"
+            android:theme="@style/SplashTheme"></activity>
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -379,14 +379,14 @@
             android:name=".service.receivers.GBMusicControlReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="nodomain.freeyourgadget.gadgetbridge.musiccontrol" />
+                <action android:name="custom.freeyourgadget.MiBandApp.musiccontrol" />
             </intent-filter>
         </receiver>
         <receiver
             android:name=".service.receivers.GBCallControlReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="nodomain.freeyourgadget.gadgetbridge.callcontrol" />
+                <action android:name="custom.freeyourgadget.MiBandApp.callcontrol" />
             </intent-filter>
         </receiver>
         <receiver
@@ -482,7 +482,7 @@
 
         <provider
             android:name=".contentprovider.PebbleContentProvider"
-            android:authorities="com.getpebble.android.provider"
+            android:authorities="com.getpebbles.android.provider"
             android:exported="true" />
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -499,7 +499,7 @@
             android:label="@string/appwidget_sleep_alarm_widget_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="nodomain.freeyourgadget.gadgetbridge.SLEEP_ALARM_WIDGET_CLICK" />
+                <action android:name="custom.freeyourgadget.MiBandApp.SLEEP_ALARM_WIDGET_CLICK" />
             </intent-filter>
 
             <meta-data
@@ -511,7 +511,7 @@
             android:label="@string/widget_listing_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="nodomain.freeyourgadget.gadgetbridge.WidgetClick" />
+                <action android:name="custom.freeyourgadget.MiBandApp.WidgetClick" />
             </intent-filter>
 
             <meta-data
@@ -533,7 +533,7 @@
             android:parentActivityName=".activities.appmanager.AppManagerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2" />
+                android:value="custom.freeyourgadget.MiBandApp.activities.ControlCenterv2" />
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

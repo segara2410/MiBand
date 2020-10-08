@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2">
+    tools:context="custom.freeyourgadget.MiBandApp.activities.ControlCenterv2">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -53,6 +53,11 @@
             <Button
                 android:id="@+id/exportDBButton"
                 android:text="@string/activity_DB_ExportButton"
+                grid:layout_column="0" />
+
+            <Button
+                android:id="@+id/exportHeartStepsTable"
+                android:text="Export Live Activity Table"
                 grid:layout_column="0" />
 
             <Button

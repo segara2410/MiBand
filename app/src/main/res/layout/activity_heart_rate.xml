@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.custom_charts.HeartRateActivity">
 
-    <nodomain.freeyourgadget.gadgetbridge.activities.charts.CustomBarChart
+    <custom.freeyourgadget.MiBandApp.activities.charts.CustomBarChart
         android:id="@+id/total_heart_charts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

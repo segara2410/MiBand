@@ -20,7 +20,7 @@ adb shell am broadcast -a com.android.systemui.demo -e command network -e wifi s
 adb shell am broadcast -a com.android.systemui.demo -e command network -e mobile show -e datatype none -e level 4
 
 #launch Gadgetbridge
-adb shell monkey -p nodomain.freeyourgadget.gadgetbridge -c android.intent.category.LAUNCHER 1
+adb shell monkey -p MiBandApp android.intent.category.LAUNCHER 1
 sleep 3
 
 #Start taking screenshots:

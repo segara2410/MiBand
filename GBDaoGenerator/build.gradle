@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin:'application'
 
-archivesBaseName = 'gadgetbridge-daogenerator'
+archivesBaseName = 'MiBandApp-daogenerator'
 //version = '0.9.2-SNAPSHOT'
 
 dependencies {
@@ -19,7 +19,7 @@ sourceSets {
     }
 }
 
-mainClassName = "nodomain.freeyourgadget.gadgetbridge.daogen.GBDaoGenerator"
+mainClassName = "custom.freeyourgadget.MiBandApp.daogen.GBDaoGenerator"
 
 task genSources(type: JavaExec) {
     main = mainClassName

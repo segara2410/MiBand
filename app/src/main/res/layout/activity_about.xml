@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gadgetbridge_img"
     android:paddingLeft="@dimen/about_margin"
-    tools:context="nodomain.freeyourgadget.gadgetbridge.activities.AboutActivity">
+    tools:context="custom.freeyourgadget.MiBandApp.activities.AboutActivity">
 
     <ScrollView
         android:layout_width="match_parent"
